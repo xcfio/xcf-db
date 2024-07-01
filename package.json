@@ -1,8 +1,8 @@
 {
     "name": "xcf-db",
     "version": "0.0.1",
-    "description": "A simple package that monitor server running time",
-    "author": "xcf-db (SoftwareX Plus)",
+    "description": "A simple database",
+    "author": "SoftwareX Plus",
     "homepage": "https://github.com/SoftwareXPlus/xcf-db/wiki",
     "type": "commonjs",
     "main": "out/index.js",
