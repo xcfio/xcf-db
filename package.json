@@ -1,7 +1,7 @@
 {
     "name": "xcf-db",
-    "version": "0.0.1",
-    "description": "A simple database",
+    "version": "0.0.2",
+    "description": "A local database",
     "author": "SoftwareX Plus",
     "homepage": "https://github.com/SoftwareXPlus/xcf-db/wiki",
     "type": "commonjs",
@@ -27,7 +27,6 @@
         "tag": "latest"
     },
     "devDependencies": {
-        "@types/node": "^20.8.3",
-        "typescript": "^5.2.2"
+        "@types/node": "^20.14.9"
     }
 }
