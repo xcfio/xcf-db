@@ -2,8 +2,8 @@
     "name": "xcf-db",
     "version": "0.0.2",
     "description": "A local database",
-    "author": "SoftwareX Plus",
-    "homepage": "https://github.com/SoftwareXPlus/xcf-db/wiki",
+    "author": "xcfio (SoftwareX Plus)",
+    "homepage": "https://github.com/softwarexplus/xcf-db/wiki",
     "type": "commonjs",
     "main": "out/index.js",
     "license": "Apache-2.0",
@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/SoftwareXPlus/xcf-db"
+        "url": "https://github.com/softwarexplus/xcf-db"
     },
     "bugs": {
         "url": "https://github.com/softwarexplus/xcf-db/issues"
     },
     "funding": {
         "type": "patreon",
-        "url": "https://www.patreon.com/SoftwareXPlus"
+        "url": "https://www.patreon.com/softwarexplus"
     },
     "publishConfig": {
         "access": "public",
