@@ -12,9 +12,11 @@ npm install xcf-db
 
 ## Usage
 
-To use `xcf-db`, you need to import the `database` function and create an instance of the database.
+To use `xcf-db`, import the `database` function and create an instance of the database.
 
-### Creating a Database Instance
+### JavaScript Example
+
+#### Creating a Database Instance
 
 ```javascript
 const { database } = require("xcf-db")
@@ -28,7 +30,7 @@ If you want to use a custom path for your database, you can pass the `path` opti
 const db = database({ path: "Your Custom Path" })
 ```
 
-### Setting Data
+#### Setting Data
 
 To set data in the database, use the `set` method:
 
@@ -36,7 +38,7 @@ To set data in the database, use the `set` method:
 db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
 ```
 
-### Getting Data
+#### Getting Data
 
 To retrieve data from the database, use the `get` method:
 
@@ -44,7 +46,7 @@ To retrieve data from the database, use the `get` method:
 db.get("cool") // returns { data: "This is data" }
 ```
 
-### Removing Data
+#### Removing Data
 
 To remove data from the database, use the `remove` method:
 
@@ -52,9 +54,81 @@ To remove data from the database, use the `remove` method:
 db.remove("cool") // returns true if data exists, otherwise returns false
 ```
 
+#### Checking Data Existence
+
+To check if a key exists in the database, use the `has` method:
+
+```javascript
+db.has("cool") // returns true if the key exists, otherwise false
+```
+
+#### Clearing the Database
+
+To clear all data in the database, use the `clear` method:
+
+```javascript
+db.clear() // clears all data in the database
+```
+
+### TypeScript Example
+
+#### Creating a Database Instance
+
+```typescript
+import { database } from "xcf-db"
+
+const db = database()
+```
+
+If you want to use a custom path for your database, you can pass the `path` option:
+
+```typescript
+const db = database({ path: "Your Custom Path" })
+```
+
+#### Setting Data
+
+To set data in the database, use the `set` method:
+
+```typescript
+db.set<{ data: string }>("cool", { data: "This is data" }) // returns { data: "This is data" }
+```
+
+#### Getting Data
+
+To retrieve data from the database, use the `get` method:
+
+```typescript
+const data = db.get<{ data: string }>("cool") // returns { data: "This is data" }
+```
+
+#### Removing Data
+
+To remove data from the database, use the `remove` method:
+
+```typescript
+const removed = db.remove("cool") // returns true if data exists, otherwise returns false
+```
+
+#### Checking Data Existence
+
+To check if a key exists in the database, use the `has` method:
+
+```typescript
+const exists = db.has("cool") // returns true if the key exists, otherwise false
+```
+
+#### Clearing the Database
+
+To clear all data in the database, use the `clear` method:
+
+```typescript
+db.clear() // clears all data in the database
+```
+
 ## API
 
-### `database({options})`
+### `database(options)`
 
 Creates a new database instance.
 
@@ -80,7 +154,19 @@ Removes the value for the specified key from the database.
 
 -   `key`: A string representing the key.
 
+### `db.has(key)`
+
+Checks if the specified key exists in the database.
+
+-   `key`: A string representing the key.
+
+### `db.clear()`
+
+Clears all data from the database.
+
 ## Example
+
+### JavaScript Example
 
 ```javascript
 const { database } = require("xcf-db")
@@ -93,8 +179,37 @@ db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
 // Get data
 db.get("cool") // returns { data: "This is data" }
 
+// Check if data exists
+db.has("cool") // returns true
+
 // Remove data
 db.remove("cool") // returns true if data exists, otherwise returns false
+
+// Clear the database
+db.clear() // clears all data
+```
+
+### TypeScript Example
+
+```typescript
+import { database } from "xcf-db"
+
+const db = database()
+
+// Set data
+db.set<{ data: string }>("cool", { data: "This is data" }) // returns { data: "This is data" }
+
+// Get data
+const data = db.get<{ data: string }>("cool") // returns { data: "This is data" }
+
+// Check if data exists
+const exists = db.has("cool") // returns true
+
+// Remove data
+const removed = db.remove("cool") // returns true if data exists, otherwise returns false
+
+// Clear the database
+db.clear() // clears all data
 ```
 
 ## License

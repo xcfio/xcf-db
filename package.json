@@ -3,12 +3,13 @@
     "version": "0.0.2",
     "description": "A local database",
     "author": "xcfio (SoftwareX Plus)",
-    "homepage": "https://github.com/softwarexplus/xcf-db/wiki",
+    "homepage": "https://github.com/softwarexplus/xcf-db#readme",
     "type": "commonjs",
     "main": "out/index.js",
     "license": "Apache-2.0",
     "scripts": {
         "build": "tsc",
+        "dev": "tsc --watch",
         "test": "tsc --noEmit"
     },
     "repository": {
