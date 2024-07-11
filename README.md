@@ -128,7 +128,7 @@ db.clear() // clears all data in the database
 
 ## API
 
-### `database(options)`
+### `database(options?)`
 
 Creates a new database instance.
 
@@ -194,13 +194,13 @@ db.clear() // clears all data
 ```typescript
 import { database } from "xcf-db"
 
-const db = database()
+const db = database<{ data: string }>()
 
 // Set data
-db.set<{ data: string }>("cool", { data: "This is data" }) // returns { data: "This is data" }
+db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
 
 // Get data
-const data = db.get<{ data: string }>("cool") // returns { data: "This is data" }
+const data = db.get("cool") // returns { data: "This is data" }
 
 // Check if data exists
 const exists = db.has("cool") // returns true
