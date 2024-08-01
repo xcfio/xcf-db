@@ -1,7 +1,7 @@
 {
     "name": "xcf-db",
-    "version": "0.0.3",
-    "description": "A local database",
+    "version": "0.0.4",
+    "description": "A lightweight, file-based key-value database library for local storage and management of data.",
     "author": "xcfio (SoftwareX Plus)",
     "homepage": "https://github.com/softwarexplus/xcf-db#readme",
     "type": "commonjs",
@@ -10,7 +10,7 @@
     "scripts": {
         "build": "tsc",
         "dev": "tsc --watch",
-        "test": "tsc --noEmit"
+        "test": "tsc --noEmit && vitest run --root=src"
     },
     "repository": {
         "type": "git",
@@ -28,6 +28,7 @@
         "tag": "latest"
     },
     "devDependencies": {
-        "@types/node": "^20.14.9"
+        "@types/node": "^22.0.2",
+        "vitest": "^2.0.5"
     }
 }

@@ -1,6 +1,6 @@
 # xcf-db
 
-`xcf-db` is a local lightweight database library for storing and managing data.
+`xcf-db` is a lightweight, file-based key-value database library for local storage and management of data.
 
 ## Installation
 
@@ -35,7 +35,8 @@ const db = database({ path: "Your Custom Path" })
 To set data in the database, use the `set` method:
 
 ```javascript
-db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
+db.set("cool", { data: "This is data" })
+// Returns: { data: "This is data" }
 ```
 
 #### Getting Data
@@ -43,15 +44,17 @@ db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
 To retrieve data from the database, use the `get` method:
 
 ```javascript
-db.get("cool") // returns { data: "This is data" }
+db.get("cool")
+// Returns: { data: "This is data" }
 ```
 
 #### Removing Data
 
-To remove data from the database, use the `remove` method:
+To remove data from the database, use the `delete` method:
 
 ```javascript
-db.remove("cool") // returns true if data exists, otherwise returns false
+db.delete("cool")
+// Returns: true if data exists, otherwise returns false
 ```
 
 #### Checking Data Existence
@@ -59,7 +62,8 @@ db.remove("cool") // returns true if data exists, otherwise returns false
 To check if a key exists in the database, use the `has` method:
 
 ```javascript
-db.has("cool") // returns true if the key exists, otherwise false
+db.has("cool")
+// Returns: true if the key exists, otherwise false
 ```
 
 #### Clearing the Database
@@ -67,7 +71,8 @@ db.has("cool") // returns true if the key exists, otherwise false
 To clear all data in the database, use the `clear` method:
 
 ```javascript
-db.clear() // clears all data in the database
+db.clear()
+// Clears all data in the database
 ```
 
 ### TypeScript Example
@@ -77,13 +82,13 @@ db.clear() // clears all data in the database
 ```typescript
 import { database } from "xcf-db"
 
-const db = database()
+const db = database<{ data: string }>()
 ```
 
 If you want to use a custom path for your database, you can pass the `path` option:
 
 ```typescript
-const db = database({ path: "Your Custom Path" })
+const db = database<{ data: string }>({ path: "Your Custom Path" })
 ```
 
 #### Setting Data
@@ -91,7 +96,8 @@ const db = database({ path: "Your Custom Path" })
 To set data in the database, use the `set` method:
 
 ```typescript
-db.set<{ data: string }>("cool", { data: "This is data" }) // returns { data: "This is data" }
+db.set("cool", { data: "This is data" })
+// Returns: { data: "This is data" }
 ```
 
 #### Getting Data
@@ -99,15 +105,17 @@ db.set<{ data: string }>("cool", { data: "This is data" }) // returns { data: "T
 To retrieve data from the database, use the `get` method:
 
 ```typescript
-const data = db.get<{ data: string }>("cool") // returns { data: "This is data" }
+const data = db.get("cool")
+// Returns: { data: "This is data" }
 ```
 
 #### Removing Data
 
-To remove data from the database, use the `remove` method:
+To remove data from the database, use the `delete` method:
 
 ```typescript
-const removed = db.remove("cool") // returns true if data exists, otherwise returns false
+const removed = db.delete("cool")
+// Returns: true if data exists, otherwise returns false
 ```
 
 #### Checking Data Existence
@@ -115,7 +123,8 @@ const removed = db.remove("cool") // returns true if data exists, otherwise retu
 To check if a key exists in the database, use the `has` method:
 
 ```typescript
-const exists = db.has("cool") // returns true if the key exists, otherwise false
+const exists = db.has("cool")
+// Returns: true if the key exists, otherwise false
 ```
 
 #### Clearing the Database
@@ -123,7 +132,8 @@ const exists = db.has("cool") // returns true if the key exists, otherwise false
 To clear all data in the database, use the `clear` method:
 
 ```typescript
-db.clear() // clears all data in the database
+db.clear()
+// Clears all data in the database
 ```
 
 ## API
@@ -142,13 +152,14 @@ Sets the value for the specified key in the database.
 -   `key`: A string representing the key.
 -   `value`: The value to set.
 
-### `db.get(key)`
+### `db.get(key, exist?)`
 
 Gets the value for the specified key from the database.
 
 -   `key`: A string representing the key.
+-   `exist` (optional): A boolean indicating whether to throw an error if the key does not exist.
 
-### `db.remove(key)`
+### `db.delete(key)`
 
 Removes the value for the specified key from the database.
 
@@ -164,6 +175,43 @@ Checks if the specified key exists in the database.
 
 Clears all data from the database.
 
+### `db.entries()`
+
+Retrieves all entries in the database as an array of key-value pairs.
+
+-   Returns: An array of key-value pairs.
+
+### `db.keys()`
+
+Retrieves all keys in the database.
+
+-   Returns: An array of keys.
+
+### `db.values()`
+
+Retrieves all values in the database.
+
+-   Returns: An array of values.
+
+### `db.size()`
+
+Retrieves the number of entries in the database.
+
+-   Returns: The number of entries.
+
+### `db.map()`
+
+Retrieves all entries in the database as a `Map`.
+
+-   Returns: A `Map` of key-value pairs.
+
+### `db.forEach(callbackfn, thisArg?)`
+
+Executes a callback function for each entry in the database.
+
+-   `callbackfn`: A function to execute for each entry.
+-   `thisArg` (optional): Value to use as `this` when executing `callbackfn`.
+
 ## Example
 
 ### JavaScript Example
@@ -174,19 +222,24 @@ const { database } = require("xcf-db")
 const db = database()
 
 // Set data
-db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
+db.set("cool", { data: "This is data" })
+// Returns: { data: "This is data" }
 
 // Get data
-db.get("cool") // returns { data: "This is data" }
+db.get("cool")
+// Returns: { data: "This is data" }
 
 // Check if data exists
-db.has("cool") // returns true
+db.has("cool")
+// Returns: true
 
 // Remove data
-db.remove("cool") // returns true if data exists, otherwise returns false
+db.delete("cool")
+// Returns: true if data exists, otherwise returns false
 
 // Clear the database
-db.clear() // clears all data
+db.clear()
+// Clears all data
 ```
 
 ### TypeScript Example
@@ -197,19 +250,24 @@ import { database } from "xcf-db"
 const db = database<{ data: string }>()
 
 // Set data
-db.set("cool", { data: "This is data" }) // returns { data: "This is data" }
+db.set("cool", { data: "This is data" })
+// Returns: { data: "This is data" }
 
 // Get data
-const data = db.get("cool") // returns { data: "This is data" }
+const data = db.get("cool")
+// Returns: { data: "This is data" }
 
 // Check if data exists
-const exists = db.has("cool") // returns true
+const exists = db.has("cool")
+// Returns: true
 
 // Remove data
-const removed = db.remove("cool") // returns true if data exists, otherwise returns false
+const removed = db.delete("cool")
+// Returns: true if data exists, otherwise returns false
 
 // Clear the database
-db.clear() // clears all data
+db.clear()
+// Clears all data
 ```
 
 ## License

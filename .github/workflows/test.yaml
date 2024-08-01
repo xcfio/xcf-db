@@ -34,4 +34,4 @@ jobs:
 
             # Run test
             - name: Run test
-              run: tsc --noEmit
+              run: tsc --noEmit && vitest run --root=src

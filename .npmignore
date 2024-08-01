@@ -4,4 +4,6 @@ src/
 .gitignore
 .prettierignore
 .prettierrc
+LICENCE
 tsconfig.json
+*.test.js
