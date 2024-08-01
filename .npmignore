@@ -7,3 +7,4 @@ src/
 LICENSE
 tsconfig.json
 *.test.js
+*.test.d.ts
