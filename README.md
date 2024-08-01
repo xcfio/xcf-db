@@ -1,6 +1,11 @@
 # xcf-db
 
-`xcf-db` is a lightweight, file-based key-value database library for local storage and management of data.
+[![Discord](https://img.shields.io/discord/1211530334458617866?style=flat&logo=discord&logoColor=ffffff&color=5865f2)](https://discord.gg/FaCCaFM74Q)
+[![GitHub Action](https://github.com/softwarexplus/xcf-db/actions/workflows/test.yaml/badge.svg)](https://github.com/softwarexplus/xcf-db/actions)
+[![NPM Version](https://img.shields.io/npm/v/xcf-db)](https://www.npmjs.com/package/xcf-db)
+[![NPM Downloads](https://img.shields.io/npm/dy/xcf-db)](https://www.npmjs.com/package/xcf-db)
+[![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/xcf-db)](https://www.npmjs.com/package/xcf-db)
+[![NPM License](https://img.shields.io/npm/l/xcf-db)](https://github.com/softwarexplus/xcf-db/blob/main/LICENSE)
 
 ## Installation
 
