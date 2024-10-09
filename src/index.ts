@@ -67,9 +67,7 @@ export function database<type = Object>(option: Option = {}): db<type> {
         map: () => {
             const map = new Map<string, type>()
             const dir = readdirSync(option.path!).map((key) => key.replace(".json", ""))
-            for (const file of dir) {
-                map.set(file, JSON.parse(readFileSync(`${option.path}/${file}.json`).toString()))
-            }
+            for (const file of dir) map.set(file, JSON.parse(readFileSync(`${option.path}/${file}.json`).toString()))
             return map
         },
 
