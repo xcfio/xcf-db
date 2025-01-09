@@ -1,6 +1,6 @@
 {
     "name": "xcf-db",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A lightweight, file-based key-value database library for local storage and management of data.",
     "author": "xcfio (SoftwareX Plus)",
     "homepage": "https://github.com/softwarexplus/xcf-db#readme",
@@ -21,7 +21,7 @@
     },
     "funding": {
         "type": "patreon",
-        "url": "https://www.patreon.com/softwarexplus"
+        "url": "https://www.patreon.com/xcfio"
     },
     "publishConfig": {
         "access": "public",
